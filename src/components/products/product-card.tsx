@@ -87,7 +87,7 @@ export function ProductCard({
             <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
               {name}
             </h3>
-            <div className="mt-1 flex items-baseline gap-2">
+            <div className="mt-1 flex flex-col">
               <span className="text-sm font-semibold text-gray-900">{displayPrice}</span>
               {displayCompareAt && (
                 <span className="text-xs text-gray-500 line-through">{displayCompareAt}</span>
@@ -154,7 +154,7 @@ export function ProductCard({
             {name}
           </h3>
 
-          <div className="flex items-baseline gap-2">
+          <div className="flex flex-col">
             <span className="text-xl font-bold" style={{ color: '#0B1F33' }}>
               {displayPrice}
             </span>
@@ -194,7 +194,7 @@ export function ProductCard({
             <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
               {name}
             </h3>
-            <div className="mt-1 flex items-baseline gap-2">
+            <div className="mt-1 flex flex-col">
               <span className="text-sm font-semibold text-gray-900">{displayPrice}</span>
               {displayCompareAt && (
                 <span className="text-xs text-gray-500 line-through">{displayCompareAt}</span>
@@ -228,17 +228,17 @@ export function ProductCard({
         {hasDiscount && <DiscountBadge discountPercent={discountPercent} />}
       </div>
 
-      <div className="mt-2.5 flex flex-col gap-1.5">
-        <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
-          {name}
-        </h3>
+        <div className="mt-2.5 flex flex-col gap-1.5">
+          <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
+            {name}
+          </h3>
 
-        <div className="flex items-baseline gap-2">
-          <span className="text-base font-semibold text-gray-900">{displayPrice}</span>
-          {displayCompareAt && (
-            <span className="text-sm text-gray-500 line-through">{displayCompareAt}</span>
-          )}
-        </div>
+          <div className="flex flex-col">
+            <span className="text-base font-semibold text-gray-900">{displayPrice}</span>
+            {displayCompareAt && (
+              <span className="text-sm text-gray-500 line-through">{displayCompareAt}</span>
+            )}
+          </div>
 
         {!inStock && (
           <span className="text-xs text-gray-500">Out of stock</span>
