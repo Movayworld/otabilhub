@@ -44,7 +44,7 @@ export function ProductGrid({
   }[columns]
 
   return (
-    <div className={cn('w-full', className)}>
+    <div className={cn(className)}>
       {title && (
         <h2 className="text-2xl font-semibold text-[#0B1F33] sm:text-3xl">
           {title}

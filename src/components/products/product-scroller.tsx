@@ -55,13 +55,13 @@ export function HorizontalProductScroller({
       {title && <div className="mt-8 sm:mt-10" />}
       <div className="relative">
         <div
-          className="flex gap-4 pb-2 sm:pb-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent snap-x snap-mandatory sm:overflow-visible sm:flex-wrap sm:snap-none sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4"
+          className="flex gap-3 pb-2 sm:pb-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent snap-x snap-mandatory sm:overflow-visible sm:flex-wrap sm:snap-none sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4"
           data-testid="product-rail"
         >
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex-shrink-0 w-64 snap-start sm:w-full sm:flex-shrink-0 sm:basis-0"
+              className="flex-shrink-0 w-full snap-start sm:w-full sm:flex-shrink-0 sm:basis-0"
             >
               <ProductCard
                 {...product}
