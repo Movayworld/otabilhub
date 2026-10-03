@@ -21,7 +21,7 @@ function AuthButton({ user }: { user: User | null }) {
     return (
       <Link href="/account">
         <Button variant="ghost" size="md" className="h-10 w-10 p-0">
-          <UserIcon size={20} />
+          <UserIcon size={22} />
           <span className="sr-only">Account</span>
         </Button>
       </Link>
@@ -31,7 +31,7 @@ function AuthButton({ user }: { user: User | null }) {
   return (
     <Link href="/login">
       <Button variant="ghost" size="md" className="h-10 w-10 p-0">
-        <UserIcon size={20} />
+        <UserIcon size={22} />
         <span className="sr-only">Account</span>
       </Button>
     </Link>
@@ -78,7 +78,7 @@ export function Header({ user }: { user: User | null }) {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0">
             <Button
               variant="ghost"
               size="md"
@@ -86,7 +86,7 @@ export function Header({ user }: { user: User | null }) {
               aria-label="Search"
               onClick={() => setSearchOpen(true)}
             >
-              <Search size={20} />
+              <Search size={22} />
               <span className="sr-only">Search</span>
             </Button>
             <AuthButton user={user} />
@@ -94,12 +94,12 @@ export function Header({ user }: { user: User | null }) {
               <Button
                 variant="ghost"
                 size="md"
-                className="relative h-10 w-10 p-0"
+                className="relative h-8 w-8 p-0 sm:h-10 sm:w-10"
                 aria-label={`Cart (${itemCount} items)`}
               >
-                <ShoppingBag size={20} />
+                <ShoppingBag size={22} />
                 {itemCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-[#1677FF] px-1 text-xs font-medium text-white">
+                  <span className="absolute -top-0.5 -right-0.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-[#1677FF] px-0.5 text-xs font-medium text-white">
                     {itemCount}
                   </span>
                 )}
@@ -108,13 +108,13 @@ export function Header({ user }: { user: User | null }) {
             </Link>
             <button
               type="button"
-              className="md:hidden p-1.5 text-[#0B1F33] hover:text-[#1677FF] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:ring-offset-2 rounded-md"
+              className="md:hidden p-1 text-[#0B1F33] hover:text-[#1677FF] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:ring-offset-2 rounded-md"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
               <span className="sr-only">Toggle menu</span>
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
