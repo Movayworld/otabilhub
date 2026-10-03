@@ -34,31 +34,57 @@ function query(sql) {
 }
 
 // Electrical product image URLs from Unsplash (stable, direct links)
-const ELECTRICAL_IMAGES = {
-  lighting: [
-    'https://images.unsplash.com/photo-1508133188369-73e7a5b3e2b3?w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1591949756370-f1f7c8b19776?w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1593696379429-ea9f81a3f6d2?w=600&auto=format&fit=crop',
-  ],
-  'switches-sockets': [
-    'https://images.unsplash.com/photo-1600194172437-899449a6c1f9?w=600&auto=format&fit=crop',
-    'https://images.unsplash.com/photo-1591993768434-5a2f1b3c5a78?w=600&auto=format&fit=crop',
-  ],
-  'circuit-breakers': [
-    'https://images.unsplash.com/photo-1581092418235-789d34f6c6e9?w=600&auto=format&fit=crop',
-  ],
-};
+const ELECTRICAL_IMAGES = [
+  // Electronics
+  'https://images.unsplash.com/photo-1593785973316-4e3b5d8a7c15?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1508133188369-73e7a5b3e2b3?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1591949756370-f1f7c8b19776?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1593696379429-ea9f81a3f6d2?w=600&auto=format&fit=crop',
+  // Switches & Sockets
+  'https://images.unsplash.com/photo-1600194172437-899449a6c1f9?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1591993768434-5a2f1b3c5a78?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1581092418235-789d34f6c6e9?w=600&auto=format&fit=crop',
+  // Lighting
+  'https://images.unsplash.com/photo-1508133188369-73e7a5b3e2b3?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1591949756370-f1f7c8b19776?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1593696379429-ea9f81a3f6d2?w=600&auto=format&fit=crop',
+  // Circuit Breakers
+  'https://images.unsplash.com/photo-1581092418235-789d34f6c6e9?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1600194172437-899449a6c1f9?w=600&auto=format&fit=crop',
+  // Cables & Wires
+  'https://images.unsplash.com/photo-1593696379429-ea9f81a3f6d2?w=600&auto=format&fit=crop',
+  // Power Tools
+  'https://images.unsplash.com/photo-1600194172437-899449a6c1f9?w=600&auto=format&fit=crop',
+  // Batteries
+  'https://images.unsplash.com/photo-1591993768434-5a2f1b3c5a78?w=600&auto=format&fit=crop',
+  // Fans & Ventilation
+  'https://images.unsplash.com/photo-1593696379429-ea9f81a3f6d2?w=600&auto=format&fit=crop',
+  // UPS & Surge Protectors
+  'https://images.unsplash.com/photo-1600194172437-899449a6c1f9?w=600&auto=format&fit=crop',
+  // Smart Home
+  'https://images.unsplash.com/photo-1593785973316-4e3b5d8a7c15?w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1591949756370-f1f7c8b19776?w=600&auto=format&fit=crop',
+];
 
-// Use picsum.photos for deterministic images
-function productImage(seed) {
-  return `https://picsum.photos/seed/${seed}/400/400`;
+function productImage(categoryIndex, productIndex) {
+  const categoryImages = {
+    0: [0, 1, 2],        // Electronics
+    1: [3, 4, 5],        // Switches & Sockets
+    2: [6, 7, 8],        // Lighting
+    3: [9, 10],          // Circuit Breakers
+    4: [11],             // Cables & Wires
+    5: [12],             // Power Tools
+    6: [13],             // Batteries
+    7: [14],             // Fans & Ventilation
+    8: [15],             // UPS & Surge Protectors
+    9: [16, 17],         // Smart Home
+  };
+  const indices = categoryImages[categoryIndex] || [0];
+  const imgIndex = indices[productIndex % indices.length];
+  return ELECTRICAL_IMAGES[imgIndex];
 }
 
-function heroImage(seed) {
-  return `https://picsum.photos/seed/${seed}/1200/800`;
-}
-
-const HOMEPAGE_IMAGE = 'https://images.unsplash.com/photo-1545198580-9e93e2e64f1d?w=1200&auto=format&fit=crop';
+const HOMEPAGE_IMAGE = 'https://images.unsplash.com/photo-1600194172437-899449a6c1f9?w=1200&auto=format&fit=crop';
 
 async function main() {
   // Step 1: Clean up test products first
@@ -144,8 +170,10 @@ async function main() {
 
   for (const prod of products) {
     const productId = require('crypto').randomUUID();
-    const imageSeed = prod.slug;
-    const imageUrl = productImage(imageSeed);
+    const catIndex = categories.findIndex(c => c.id === prod.cat);
+    const catProducts = products.filter(p => p.cat === prod.cat);
+    const prodIndex = catProducts.indexOf(prod);
+    const imageUrl = productImage(catIndex, prodIndex);
     const imageAlt = `${prod.name} - front view`;
 
     // Insert product
