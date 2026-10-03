@@ -61,7 +61,6 @@ export function ProductCard({
     ? Math.round(((compareAtPrice! - price) / compareAtPrice!) * 100)
     : 0
   const displayPrice = formatCedi(price)
-  const displayCompareAt = hasDiscount ? formatCedi(compareAtPrice!) : null
   const inStock = isAvailable && stockQuantity > 0
 
   if (cardLayout === 'compact' || cardLayout === 'minimal' || cardLayout === 'horizontal-card') {
@@ -87,12 +86,7 @@ export function ProductCard({
             <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
               {name}
             </h3>
-            <div className="mt-1 flex flex-col">
-              <span className="text-sm font-semibold text-gray-900">{displayPrice}</span>
-              {displayCompareAt && (
-                <span className="text-xs text-gray-500 line-through">{displayCompareAt}</span>
-              )}
-            </div>
+            <span className="text-sm font-semibold text-gray-900">{displayPrice}</span>
           </div>
         </div>
       </Link>
@@ -120,9 +114,6 @@ export function ProductCard({
           <div className="absolute inset-x-0 bottom-0 p-4">
             <h3 className="text-lg font-semibold text-white line-clamp-1">{name}</h3>
             <p className="mt-1 text-lg font-semibold text-white">{displayPrice}</p>
-            {displayCompareAt && (
-              <p className="text-sm text-gray-300 line-through">{displayCompareAt}</p>
-            )}
           </div>
         </div>
       </Link>
@@ -154,14 +145,9 @@ export function ProductCard({
             {name}
           </h3>
 
-          <div className="flex flex-col">
-            <span className="text-xl font-bold" style={{ color: '#0B1F33' }}>
-              {displayPrice}
-            </span>
-            {displayCompareAt && (
-              <span className="text-sm text-gray-500 line-through">{displayCompareAt}</span>
-            )}
-          </div>
+          <span className="text-xl font-bold" style={{ color: '#0B1F33' }}>
+            {displayPrice}
+          </span>
 
           {!inStock && (
             <span className="text-xs text-gray-500">Out of stock</span>
@@ -194,12 +180,7 @@ export function ProductCard({
             <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
               {name}
             </h3>
-            <div className="mt-1 flex flex-col">
-              <span className="text-sm font-semibold text-gray-900">{displayPrice}</span>
-              {displayCompareAt && (
-                <span className="text-xs text-gray-500 line-through">{displayCompareAt}</span>
-              )}
-            </div>
+            <span className="text-sm font-semibold text-gray-900">{displayPrice}</span>
             {!inStock && (
               <span className="text-xs text-gray-500">Out of stock</span>
             )}
@@ -228,17 +209,12 @@ export function ProductCard({
         {hasDiscount && <DiscountBadge discountPercent={discountPercent} />}
       </div>
 
-        <div className="mt-2.5 flex flex-col gap-1.5">
-          <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
-            {name}
-          </h3>
+      <div className="mt-2.5 flex flex-col gap-1.5">
+        <h3 className="text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-[#1677FF] transition-colors">
+          {name}
+        </h3>
 
-          <div className="flex flex-col">
-            <span className="text-base font-semibold text-gray-900">{displayPrice}</span>
-            {displayCompareAt && (
-              <span className="text-sm text-gray-500 line-through">{displayCompareAt}</span>
-            )}
-          </div>
+        <span className="text-base font-semibold text-gray-900">{displayPrice}</span>
 
         {!inStock && (
           <span className="text-xs text-gray-500">Out of stock</span>
