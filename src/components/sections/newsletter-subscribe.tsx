@@ -42,7 +42,7 @@ export function NewsletterSubscribe() {
       <Container>
         <div className="py-12 sm:py-16">
           <div className="mx-auto max-w-xl">
-            <h2 className="font-display text-2xl font-light tracking-tight text-[#0B1F33] sm:text-3xl">
+             <h2 className="font-sans text-2xl font-semibold text-[#0B1F33] sm:text-3xl">
               Stay connected with OtabilHub
             </h2>
             <p className="mt-3 text-sm text-gray-600">
@@ -50,9 +50,9 @@ export function NewsletterSubscribe() {
             </p>
 
             {success ? (
-              <div className="mt-6 flex items-center gap-3 rounded-md bg-green-50 border border-green-200 p-4">
-                <CheckCircle2 size={18} className="text-green-600 flex-shrink-0" />
-                <p className="text-sm text-green-800">
+              <div className="mt-6 flex items-center gap-3 rounded-md bg-[#E6F0FF] border border-[#BBDEFB] p-4">
+                <CheckCircle2 size={18} className="text-[#1677FF] flex-shrink-0" />
+                <p className="text-sm text-[#0B3D91]">
                   Thank you for subscribing! Check your inbox for a confirmation.
                 </p>
               </div>
@@ -70,7 +70,7 @@ export function NewsletterSubscribe() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isSubmitting}
-                    className="w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2.5 bg-white focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600 disabled:opacity-50"
+                    className="w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2.5 bg-white focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF] disabled:opacity-50"
                   />
                 </div>
                 <Button
@@ -105,3 +105,4 @@ export function NewsletterSubscribe() {
     </section>
   )
 }
+

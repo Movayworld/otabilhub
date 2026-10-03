@@ -26,7 +26,7 @@ export function SortSelector({
         name="sort"
         value={currentSort ?? 'featured'}
         onChange={handleSortChange}
-        className="text-sm text-gray-700 border border-gray-300 rounded-md px-3 py-1.5 bg-white focus:outline-none focus:ring-1 focus:ring-green-600"
+        className="text-sm text-gray-700 border border-gray-300 rounded-md px-3 py-1.5 bg-white focus:outline-none focus:ring-1 focus:ring-[#1677FF]"
         aria-label="Sort products"
       >
         {sortOptions.map((option) => (
@@ -39,3 +39,4 @@ export function SortSelector({
     </div>
   )
 }
+

@@ -34,11 +34,11 @@ export function ProductGrid({
   }
 
   const columnClass = {
-    auto: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
+    auto: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
     compact: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
     wide: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
     two: 'grid-cols-1 sm:grid-cols-2',
-    three: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3',
+    three: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4',
     mobileTwo: 'grid-cols-2',
     collection: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
   }[columns]
@@ -46,17 +46,22 @@ export function ProductGrid({
   return (
     <div className={cn('w-full', className)}>
       {title && (
-          <h2 className="font-display text-2xl font-light text-[#0B1F33] sm:text-3xl">
+        <h2 className="text-2xl font-semibold text-[#0B1F33] sm:text-3xl">
           {title}
         </h2>
       )}
       {subtitle && (
-        <p className="mt-2 max-w-2xl text-gray-600">{subtitle}</p>
+        <p className="mt-2 max-w-2xl text-sm text-gray-600">{subtitle}</p>
       )}
       {title && <div className="mt-8 sm:mt-10" />}
       <div className={cn('grid gap-4', columnClass)}>
         {products.map((product) => (
-          <ProductCard key={product.id} {...product} cardLayout={product.cardLayout || cardLayout} homepageLayout={product.homepageLayout || homepageLayout} />
+          <ProductCard
+            key={product.id}
+            {...product}
+            cardLayout={product.cardLayout || cardLayout}
+            homepageLayout={product.homepageLayout || homepageLayout}
+          />
         ))}
       </div>
     </div>

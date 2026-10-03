@@ -8,7 +8,7 @@ export default function AboutPage() {
       <Section className="py-16 sm:py-20 lg:py-24">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-display text-3xl font-light tracking-tight text-[#0B1F33] sm:text-4xl lg:text-5xl">
+            <h1 className="font-sans text-3xl font-semibold tracking-tight text-[#0B1F33] sm:text-4xl lg:text-5xl">
               About OtabilHub
             </h1>
             <p className="mt-6 text-lg text-gray-600">

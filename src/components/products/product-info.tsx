@@ -167,7 +167,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
             Category:
             <Link
               href={`/shop?category=${product.category.slug}`}
-              className="ml-1 text-gray-900 hover:text-green-600"
+              className="ml-1 text-gray-900 hover:text-[#1677FF]"
             >
               {product.category.name}
             </Link>

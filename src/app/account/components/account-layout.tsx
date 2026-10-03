@@ -23,8 +23,8 @@ function AccountNav({ currentPath }: { currentPath: string }) {
             href={item.href}
             className={
               isActive
-                ? 'block px-3 py-2 text-sm font-medium text-green-600 bg-green-50 border-l-2 border-green-600'
-                : 'block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-green-600 border-l-2 border-transparent'
+                ? 'block px-3 py-2 text-sm font-medium text-[#1677FF] bg-[#E6F0FF] border-l-2 border-[#1677FF]'
+                : 'block px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1677FF] border-l-2 border-transparent'
             }
           >
             {item.name}
@@ -40,7 +40,7 @@ function LogoutButton() {
     <form action={logoutAction}>
       <button
         type="submit"
-        className="w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-green-600 border-l-2 border-transparent"
+        className="w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-[#1677FF] border-l-2 border-transparent"
       >
         Log out
       </button>
@@ -90,3 +90,4 @@ export async function AccountLayout({
     </div>
   )
 }
+

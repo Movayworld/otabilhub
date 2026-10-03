@@ -211,7 +211,7 @@ export default function CheckoutPage({
                   id="fullName"
                   value={formData.fullName}
                   onChange={(e) => handleInputChange('fullName', e.target.value)}
-                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                   aria-invalid={!!formErrors.fullName}
                   aria-describedby={formErrors.fullName ? 'fullName-error' : undefined}
                 />
@@ -231,7 +231,7 @@ export default function CheckoutPage({
                   id="phone"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                   aria-invalid={!!formErrors.phone}
                   aria-describedby={formErrors.phone ? 'phone-error' : undefined}
                 />
@@ -251,7 +251,7 @@ export default function CheckoutPage({
                   id="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                   aria-invalid={!!formErrors.email}
                   aria-describedby={formErrors.email ? 'email-error' : undefined}
                 />
@@ -271,7 +271,7 @@ export default function CheckoutPage({
                   rows={3}
                   value={formData.address}
                   onChange={(e) => handleInputChange('address', e.target.value)}
-                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600 resize-y"
+                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF] resize-y"
                   aria-invalid={!!formErrors.address}
                   aria-describedby={formErrors.address ? 'address-error' : undefined}
                 />
@@ -291,7 +291,7 @@ export default function CheckoutPage({
                   id="city"
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
-                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                   aria-invalid={!!formErrors.city}
                   aria-describedby={formErrors.city ? 'city-error' : undefined}
                 />
@@ -312,7 +312,7 @@ export default function CheckoutPage({
                   maxLength={1000}
                   value={formData.notes || ''}
                   onChange={(e) => handleInputChange('notes', e.target.value)}
-                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600 resize-y"
+                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF] resize-y"
                   placeholder="Any special delivery instructions..."
                 />
               </div>
@@ -333,7 +333,7 @@ export default function CheckoutPage({
                   id="deliveryLocation"
                   value={selectedLocationId}
                   onChange={handleLocationChange}
-                  className="w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                  className="w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 >
                   <option value="">Select a location</option>
                   {deliveryLocations.map((loc) => (
@@ -401,7 +401,7 @@ export default function CheckoutPage({
               type="button"
               onClick={handleSubmit}
               disabled={isSubmitting || deliveryLocations.length === 0 || !selectedLocationId}
-              className="mt-6 w-full rounded-md border border-transparent bg-green-600 px-4 py-2.5 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              className="mt-6 w-full rounded-md border border-transparent bg-[#1677FF] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#0B3D91] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">
@@ -429,3 +429,4 @@ export default function CheckoutPage({
     </Section>
   )
 }
+

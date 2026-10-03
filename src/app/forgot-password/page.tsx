@@ -66,13 +66,13 @@ export default function ForgotPasswordPage() {
 
           {successMessage ? (
             <div className="mt-8 text-center">
-              <div className="rounded-md bg-green-50 p-4">
-                <p className="text-sm text-green-800">{successMessage}</p>
+              <div className="rounded-md bg-[#E6F0FF] p-4">
+                <p className="text-sm text-[#0B3D91]">{successMessage}</p>
               </div>
               <p className="mt-4 text-center text-sm text-gray-600">
                 <Link
                   href="/login"
-                  className="font-medium text-green-600 hover:text-green-700"
+                  className="font-medium text-[#1677FF] hover:text-[#0B3D91]"
                 >
                   Back to sign in
                 </Link>
@@ -92,7 +92,7 @@ export default function ForgotPasswordPage() {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                  className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                   autoComplete="email"
                   aria-invalid={!!emailError}
                   aria-describedby={emailError ? 'email-error' : undefined}
@@ -132,7 +132,7 @@ export default function ForgotPasswordPage() {
           <p className="mt-6 text-center text-sm text-gray-600">
             <Link
               href="/login"
-              className="font-medium text-gray-600 hover:text-green-600"
+              className="font-medium text-gray-600 hover:text-[#1677FF]"
             >
               Back to sign in
             </Link>
@@ -142,3 +142,4 @@ export default function ForgotPasswordPage() {
     </Section>
   )
 }
+

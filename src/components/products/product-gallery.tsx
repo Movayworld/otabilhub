@@ -65,7 +65,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             <button
               type="button"
               onClick={goToPrevious}
-              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+              className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:ring-offset-2"
               aria-label="Previous image"
             >
               <ChevronLeft size={20} />
@@ -73,7 +73,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             <button
               type="button"
               onClick={goToNext}
-              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2"
+              className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:ring-offset-2"
               aria-label="Next image"
             >
               <ChevronRight size={20} />
@@ -91,8 +91,8 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
               onClick={() => setCurrentImageIndex(index)}
               className={cn(
                 'relative aspect-square w-full overflow-hidden rounded-md bg-gray-50 border-2 transition-all',
-                index === currentImageIndex
-                  ? 'border-green-600'
+                  index === currentImageIndex
+                  ? 'border-[#1677FF]'
                   : 'border-transparent hover:border-gray-300'
               )}
               aria-label={`View image ${index + 1} of ${images.length}`}

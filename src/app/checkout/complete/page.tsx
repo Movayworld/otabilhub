@@ -103,7 +103,7 @@ export default async function CheckoutCompletePage({
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Payment Issue</h1>
           <p className="text-gray-600 mb-6">{order.error}</p>
           <Link href="/shop">
-            <span className="text-green-600 hover:text-green-700 font-medium">Continue shopping</span>
+            <span className="text-[#1677FF] hover:text-[#0B3D91] font-medium">Continue shopping</span>
           </Link>
         </div>
       </div>
@@ -119,8 +119,8 @@ export default async function CheckoutCompletePage({
           <div className="mb-8 flex items-center justify-center">
             {paymentConfirmed ? (
               <>
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-                  <CheckCircle size={32} className="text-green-600" />
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#E6F0FF]">
+                  <CheckCircle size={32} className="text-[#1677FF]" />
                 </div>
                 <div className="ml-4 text-left">
                   <h1 className="text-2xl font-bold text-gray-900">Payment Successful!</h1>
@@ -157,7 +157,7 @@ export default async function CheckoutCompletePage({
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Payment Status</span>
-              <span className="font-medium text-green-600 uppercase">{order.payment_state}</span>
+              <span className="font-medium text-[#1677FF] uppercase">{order.payment_state}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Order Status</span>
@@ -200,7 +200,7 @@ export default async function CheckoutCompletePage({
 
           <div className="mt-8 text-center">
             <Link href="/shop">
-              <span className="text-sm font-medium text-green-600 hover:text-green-700">
+              <span className="text-sm font-medium text-[#1677FF] hover:text-[#0B3D91]">
                 Continue shopping
               </span>
             </Link>
@@ -210,3 +210,4 @@ export default async function CheckoutCompletePage({
     </div>
   )
 }
+

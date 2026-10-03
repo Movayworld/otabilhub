@@ -70,7 +70,7 @@ function CartItemRow({
           <div>
             <Link
               href={`/shop/${item.slug}`}
-              className="text-sm font-medium text-gray-900 hover:text-green-600"
+              className="text-sm font-medium text-gray-900 hover:text-[#1677FF]"
             >
               {item.name}
             </Link>
@@ -105,7 +105,7 @@ function CartItemRow({
               max={item.maxAvailable}
               value={item.quantity}
               onChange={handleQuantityInput}
-              className="w-10 text-center text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-green-600"
+              className="w-10 text-center text-sm text-gray-900 focus:outline-none focus:ring-1 focus:ring-[#1677FF]"
               aria-label={`Quantity for ${item.name}`}
             />
 

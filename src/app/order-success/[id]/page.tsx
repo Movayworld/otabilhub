@@ -154,7 +154,7 @@ export default async function OrderSuccessPage({
       <Container>
         <div className="text-center">
           <div className="mb-6 flex justify-center">
-            <CheckCircle2 size={56} className="text-green-600" />
+            <CheckCircle2 size={56} className="text-blue-600" />
           </div>
 
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -187,7 +187,7 @@ export default async function OrderSuccessPage({
                </div>
                <div>
                  <p className="text-sm text-gray-500">Payment</p>
-                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${order.payment_state === 'paid' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'}`}>
+                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${order.payment_state === 'paid' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-700'}`}>
                    {order.payment_state}
                  </span>
                </div>

@@ -4,14 +4,18 @@
 
 @layer base {
   :root {
-    --font-inter: '';
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --color-navy: #0B1F33;
+    --color-navy-light: #1E3A5F;
     --color-blue: #1677FF;
     --color-blue-dark: #0B3D91;
-    --color-blue-light: #69C0FF;
+    --color-accent-orange: #E86F18;
+    --color-accent-orange-dark: #D45A0F;
     --color-gray-light: #F5F7FA;
     --color-gray: #9CA3AF;
     --color-gray-dark: #6B7280;
+    --color-gray-darker: #374151;
+    --color-border: #E5E7EB;
   }
 
   html {
@@ -21,23 +25,23 @@
   }
 
   body {
-    @apply bg-[#F5F7FA] text-[#0B1F33] antialiased;
+    @apply bg-white text-[#0B1F33] antialiased font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-light tracking-tight text-[#0B1F33];
+    @apply font-semibold tracking-tight text-[#0B1F33];
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl;
-  }
-
-  h2 {
     @apply text-3xl sm:text-4xl;
   }
 
-  h3 {
+  h2 {
     @apply text-2xl sm:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl;
   }
 
   p {
@@ -47,16 +51,9 @@
   a {
     @apply text-inherit underline-offset-2 hover:text-[#1677FF];
   }
-}
 
-@layer base {
-  html,
-  body {
-    width: 100%;
-    overflow-x: clip;
+  .bg-pattern {
+    background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+    background-size: 20px 20px;
   }
-}
-
-.font-display {
-  font-family: 'Cormorant Garamond', serif;
 }

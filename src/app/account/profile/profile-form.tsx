@@ -100,7 +100,7 @@ export function ProfileForm({ profile }: { profile: Profile }) {
           id="fullName"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
-          className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+          className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
           autoComplete="name"
           maxLength={100}
           aria-invalid={!!formErrors.fullName}
@@ -125,7 +125,7 @@ export function ProfileForm({ profile }: { profile: Profile }) {
           id="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+          className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
           autoComplete="tel"
           maxLength={20}
           placeholder="+233 20 000 0000"
@@ -143,7 +143,7 @@ export function ProfileForm({ profile }: { profile: Profile }) {
           id="address"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600 resize-y"
+          className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF] resize-y"
           autoComplete="street-address"
           maxLength={500}
           rows={4}
@@ -158,8 +158,8 @@ export function ProfileForm({ profile }: { profile: Profile }) {
       )}
 
       {serverSuccess && (
-        <div className="rounded-md bg-green-50 p-3">
-          <p className="text-sm text-green-800">{serverSuccess}</p>
+        <div className="rounded-md bg-[#E6F0FF] p-3">
+          <p className="text-sm text-[#0B3D91]">{serverSuccess}</p>
         </div>
       )}
 
@@ -188,3 +188,4 @@ export function ProfileForm({ profile }: { profile: Profile }) {
     </form>
   )
 }
+

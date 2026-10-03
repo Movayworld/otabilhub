@@ -92,7 +92,7 @@ export default function ResetPasswordPage() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="new-password"
                 minLength={8}
                 aria-invalid={!!formErrors.password}
@@ -117,7 +117,7 @@ export default function ResetPasswordPage() {
                 id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="new-password"
                 aria-invalid={!!formErrors.confirmPassword}
                 aria-describedby={formErrors.confirmPassword ? 'confirmPassword-error' : undefined}
@@ -139,8 +139,8 @@ export default function ResetPasswordPage() {
             )}
 
             {serverSuccess && (
-              <div className="rounded-md bg-green-50 p-3">
-                <p className="text-sm text-green-800">{serverSuccess}</p>
+              <div className="rounded-md bg-[#E6F0FF] p-3">
+                <p className="text-sm text-[#0B3D91]">{serverSuccess}</p>
               </div>
             )}
 
@@ -166,3 +166,4 @@ export default function ResetPasswordPage() {
     </Section>
   )
 }
+

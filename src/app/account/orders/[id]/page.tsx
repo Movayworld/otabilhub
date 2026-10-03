@@ -30,7 +30,7 @@ function StatusBadge({ status }: { status: string }) {
     pending: 'bg-gray-100 text-gray-700',
     confirmed: 'bg-blue-100 text-blue-700',
     processing: 'bg-orange-100 text-orange-700',
-    completed: 'bg-green-100 text-green-700',
+    completed: 'bg-blue-100 text-blue-700',
     cancelled: 'bg-red-100 text-red-700',
   }
 
@@ -100,7 +100,7 @@ export default async function OrderDetailPage({
             Order #{order.id.slice(0, 8).toUpperCase()}
           </h1>
           <Link href="/account/orders">
-            <button className="text-sm font-medium text-green-600 hover:text-green-700">
+            <button className="text-sm font-medium text-[#1677FF] hover:text-[#0B3D91]">
               &larr; Back to all orders
             </button>
           </Link>

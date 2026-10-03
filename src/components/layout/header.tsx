@@ -6,7 +6,6 @@ import { ShoppingBag, Menu, X, UserIcon, Search } from 'lucide-react'
 import { Container } from '@/components/layout/container'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/components/cart/cart-context'
-import { cn } from '@/lib/utils'
 import { SearchModal } from '@/components/search/search-modal'
 import type { User } from '@supabase/supabase-js'
 
@@ -14,6 +13,7 @@ const navigation = [
   { name: 'Shop', href: '/shop' },
   { name: 'Services', href: '/services' },
   { name: 'About', href: '/about' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 function AuthButton({ user }: { user: User | null }) {
@@ -44,7 +44,7 @@ export function Header({ user }: { user: User | null }) {
   const { itemCount } = useCart()
 
   useEffect(() => {
-    if (mobileOpen) {
+    if (mobileOpen || searchOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
@@ -52,31 +52,19 @@ export function Header({ user }: { user: User | null }) {
     return () => {
       document.body.style.overflow = ''
     }
-  }, [mobileOpen])
+  }, [mobileOpen, searchOpen])
 
   return (
-    <header className="fixed top-4 left-0 z-50 w-full">
+    <header className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white/95 backdrop-blur-sm">
       <Container>
-        <div className="flex h-12 items-center justify-between rounded-full border border-gray-300/50 bg-[#F5F7FA]/80 px-4 backdrop-blur-sm">
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              className="p-1.5 text-[#0B1F33] hover:text-[#1677FF] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:ring-offset-2 rounded-md"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileOpen}
-            >
-              <span className="sr-only">Toggle menu</span>
-              {mobileOpen ? (
-                <X size={18} />
-              ) : (
-                <Menu size={18} />
-              )}
-            </button>
-          </div>
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-xl font-semibold text-[#0B1F33]">OtabilHub</span>
+            <span className="text-xs font-medium text-[#1677FF]">Electrical</span>
+          </Link>
 
           <nav className="hidden md:block">
-            <ul className="flex items-center gap-5 text-sm font-light">
+            <ul className="flex items-center gap-6 text-sm font-medium">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <Link
@@ -90,7 +78,7 @@ export function Header({ user }: { user: User | null }) {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <Button
               variant="ghost"
               size="md"
@@ -118,39 +106,39 @@ export function Header({ user }: { user: User | null }) {
                 <span className="sr-only">Cart</span>
               </Button>
             </Link>
+            <button
+              type="button"
+              className="md:hidden p-1.5 text-[#0B1F33] hover:text-[#1677FF] focus:outline-none focus:ring-2 focus:ring-[#1677FF] focus:ring-offset-2 rounded-md"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+            >
+              <span className="sr-only">Toggle menu</span>
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </div>
 
         {mobileOpen && (
           <div
-            className="md:hidden absolute top-full left-0 mt-2 w-full rounded-lg border border-gray-300/50 bg-[#F5F7FA]/95 p-3 backdrop-blur-sm"
+            className="md:hidden absolute top-16 left-0 w-full border-b border-gray-200 bg-white"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile menu"
           >
-            <nav className="px-2 pb-2 pt-1">
+            <nav className="px-2 pb-3 pt-2">
               <ul className="flex flex-col gap-1">
                 {navigation.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="flex items-center gap-3 px-3 py-2 text-sm font-light text-[#0B1F33] hover:bg-gray-100 hover:text-[#1677FF] rounded-md"
+                      className="flex items-center px-3 py-2 text-sm font-medium text-[#0B1F33] hover:bg-gray-50 hover:text-[#1677FF] rounded-md"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.name}
                     </Link>
                   </li>
                 ))}
-                <li className="border-t border-gray-300/30 pt-2 mt-2">
-                  <Link
-                    href="/login"
-                    className="flex items-center gap-3 px-3 py-2 text-sm font-light text-[#0B1F33] hover:bg-gray-100 hover:text-[#1677FF] rounded-md"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    <UserIcon size={16} />
-                    Account
-                  </Link>
-                </li>
               </ul>
             </nav>
           </div>

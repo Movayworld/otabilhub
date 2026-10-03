@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Cormorant_Garamond } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { getCurrentUser } from '@/lib/supabase/auth'
 import { Header } from '@/components/layout/header'
@@ -11,14 +11,7 @@ import { AdminLoginModal } from '@/components/admin/admin-login-modal'
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700'],
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  variable: '--font-display',
+  variable: '--font-sans',
   display: 'swap',
   weight: ['300', '400', '500', '600', '700'],
 })
@@ -52,11 +45,11 @@ export default async function RootLayout({
   const user = await getCurrentUser()
 
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body className="font-sans">
         <CartProvider>
           <Header user={user} />
-          <main className="font-sans pt-20">{children}</main>
+          <main className="font-sans pt-16">{children}</main>
           <Footer />
           <CookieConsentBanner />
           <AdminLoginModal />

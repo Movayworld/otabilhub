@@ -40,22 +40,21 @@ export function CategorySection({
     )
   }
 
-  // GRID mode: responsive 2-column grid on mobile
   return (
     <div>
       <div className="flex items-baseline justify-between">
-        <h2 className="font-display text-2xl font-light text-[#0B1F33] sm:text-3xl">
+        <h2 className="text-2xl font-semibold text-[#0B1F33] sm:text-3xl">
           {sectionTitle}
         </h2>
         <Link
           href={`/shop?category=${categorySlug}`}
-          className="text-sm font-light text-[#1677FF] hover:text-[#0B3D91] underline"
+          className="text-sm font-medium text-[#1677FF] hover:text-[#0B3D91] underline"
         >
           View all
         </Link>
       </div>
       {sectionSubtitle && (
-        <p className="mt-2 max-w-2xl text-gray-600">{sectionSubtitle}</p>
+        <p className="mt-2 max-w-2xl text-sm text-gray-600">{sectionSubtitle}</p>
       )}
       <div className="mt-8 sm:mt-10">
         <ProductGrid

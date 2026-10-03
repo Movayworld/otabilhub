@@ -36,13 +36,13 @@ export function HorizontalProductScroller({
     <div className={cn('w-full', className)}>
       {title && (
         <div className="flex items-baseline justify-between">
-          <h2 className="font-display text-2xl font-light text-[#0B1F33] sm:text-3xl">
+          <h2 className="text-2xl font-semibold text-[#0B1F33] sm:text-3xl">
             {title}
           </h2>
           {categorySlug && (
             <Link
               href={`/shop?category=${categorySlug}`}
-              className="text-sm font-light text-[#1677FF] hover:text-[#0B3D91] underline"
+              className="text-sm font-medium text-[#1677FF] hover:text-[#0B3D91] underline"
             >
               View all
             </Link>
@@ -50,18 +50,18 @@ export function HorizontalProductScroller({
         </div>
       )}
       {subtitle && (
-        <p className="mt-2 max-w-2xl text-gray-600">{subtitle}</p>
+        <p className="mt-2 max-w-2xl text-sm text-gray-600">{subtitle}</p>
       )}
       {title && <div className="mt-8 sm:mt-10" />}
-      <div className="relative -mx-[30px] sm:mx-0">
+      <div className="relative">
         <div
-          className="flex gap-4 pb-2 sm:pb-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent snap-x snap-mandatory sm:overflow-visible sm:flex-wrap sm:snap-none sm:static sm:mx-auto sm:overflow-x-hidden"
+          className="flex gap-4 pb-2 sm:pb-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent snap-x snap-mandatory sm:overflow-visible sm:flex-wrap sm:snap-none sm:grid sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-4"
           data-testid="product-rail"
         >
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex-shrink-0 w-64 sm:w-56 snap-start"
+              className="flex-shrink-0 w-64 snap-start sm:w-full sm:flex-shrink-0 sm:basis-0"
             >
               <ProductCard
                 {...product}
@@ -71,7 +71,6 @@ export function HorizontalProductScroller({
             </div>
           ))}
         </div>
-        <div className="pointer-events-none sm:hidden absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent" />
       </div>
     </div>
   )

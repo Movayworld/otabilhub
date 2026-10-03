@@ -101,7 +101,7 @@ export default function SignUpPage() {
               Already have an account?{' '}
               <Link
                 href="/login"
-                className="font-medium text-green-600 hover:text-green-700"
+                className="font-medium text-[#1677FF] hover:text-[#0B3D91]"
               >
                 Sign in
               </Link>
@@ -121,7 +121,7 @@ export default function SignUpPage() {
                 id="fullName"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="name"
                 aria-invalid={!!formErrors.fullName}
                 aria-describedby={formErrors.fullName ? 'fullName-error' : undefined}
@@ -148,7 +148,7 @@ export default function SignUpPage() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="email"
                 aria-invalid={!!formErrors.email}
                 aria-describedby={formErrors.email ? 'email-error' : undefined}
@@ -172,7 +172,7 @@ export default function SignUpPage() {
                 id="phone"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="tel"
                 aria-invalid={!!formErrors.phone}
                 aria-describedby={formErrors.phone ? 'phone-error' : undefined}
@@ -196,7 +196,7 @@ export default function SignUpPage() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="new-password"
                 minLength={8}
                 aria-invalid={!!formErrors.password}
@@ -224,7 +224,7 @@ export default function SignUpPage() {
                 id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="new-password"
                 aria-invalid={!!formErrors.confirmPassword}
                 aria-describedby={formErrors.confirmPassword ? 'confirmPassword-error' : undefined}
@@ -267,14 +267,14 @@ export default function SignUpPage() {
             By creating an account, you agree to our{' '}
             <Link
               href="/terms"
-              className="text-gray-600 hover:text-green-600 underline"
+              className="text-gray-600 hover:text-[#1677FF] underline"
             >
               Terms of Service
             </Link>{' '}
             and{' '}
             <Link
               href="/privacy"
-              className="text-gray-600 hover:text-green-600 underline"
+              className="text-gray-600 hover:text-[#1677FF] underline"
             >
               Privacy Policy
             </Link>
@@ -285,3 +285,4 @@ export default function SignUpPage() {
     </Section>
   )
 }
+

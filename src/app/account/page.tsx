@@ -27,7 +27,7 @@ function StatusBadge({ status }: { status: string }) {
     pending: 'bg-gray-100 text-gray-700',
     confirmed: 'bg-blue-100 text-blue-700',
     processing: 'bg-orange-100 text-orange-700',
-    completed: 'bg-green-100 text-green-700',
+    completed: 'bg-[#E6F0FF] text-[#0B3D91]',
     cancelled: 'bg-red-100 text-red-700',
   }
 
@@ -69,7 +69,7 @@ function RecentOrdersList({ orders }: { orders: Order[] | null }) {
               <td className="py-3 px-4">
                 <Link
                   href={`/account/orders/${order.id}`}
-                  className="font-medium text-gray-900 hover:text-green-600"
+                  className="font-medium text-gray-900 hover:text-[#1677FF]"
                 >
                   #{order.id.slice(0, 8).toUpperCase()}
                 </Link>
@@ -142,3 +142,4 @@ export default async function AccountPage({
     </AccountLayout>
   )
 }
+

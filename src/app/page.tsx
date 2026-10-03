@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { Container } from '@/components/layout/container'
 import { Hero } from '@/components/sections/hero'
 import { ServicesSection } from '@/components/sections/services'
-import { BrandStatement } from '@/components/sections/brand-statement'
+import { Footer } from '@/components/layout/footer'
 import { CategorySection } from '@/components/products/category-section'
 import { ProductGrid } from '@/components/products/product-grid'
 import { NewsletterSubscribe } from '@/components/sections/newsletter-subscribe'
@@ -18,9 +18,8 @@ interface ProductRow {
   is_available: boolean
   stock_quantity: number
   is_published: boolean
-  card_layout: string | null
+  homepage_section: string | null
   homepage_order: number | null
-  specifications: Record<string, unknown> | null
   product_images: Array<{
     image_url: string
     alt_text: string | null
@@ -58,9 +57,7 @@ function mapProductRow(p: ProductRow): ProductCardProps {
     stockQuantity: p.stock_quantity,
     imageUrl,
     imageAlt: imageAlt ?? undefined,
-    specifications: p.specifications,
     homepageLayout: 'vertical',
-    cardLayout: 'standard',
   }
 }
 
@@ -143,7 +140,8 @@ async function HomepageContent() {
           categorySlug={cat.slug}
           displayMode={displayMode}
           products={products}
-          title={cat.display_order === 0 ? cat.name.toUpperCase() : cat.name}
+          title={cat.name}
+          subtitle={cat.description || `Shop our ${cat.name.toLowerCase()} collection.`}
         />
       )
     })
@@ -153,12 +151,12 @@ async function HomepageContent() {
 
   return (
     <>
-      <section className="border-t border-gray-300/50 py-6 sm:py-8">
+      <section className="border-t border-gray-200 py-6 sm:py-8">
         <Container>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs text-gray-500">
-            <span>Quality Products</span>
-            <span>Smart Living</span>
-            <span>Reliable Technology</span>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs font-medium text-gray-500">
+            <span>Quality Electrical Products</span>
+            <span>Fast Nationwide Delivery</span>
+            <span>Professional Installation</span>
           </div>
         </Container>
       </section>
@@ -166,15 +164,12 @@ async function HomepageContent() {
       <section className="py-16 sm:py-20 lg:py-24">
         <Container>
           {featuredProducts.length > 0 && visibleSections.length === 0 ? (
-            <div className="mb-10 text-center">
-              <h2 className="font-display text-2xl font-light text-[#0B1F33] sm:text-3xl">
-                Selected Products
-              </h2>
-            </div>
-          ) : null}
-
-          {featuredProducts.length > 0 && visibleSections.length === 0 ? (
             <>
+              <div className="mb-10">
+                <h2 className="text-2xl font-semibold text-[#0B1F33] sm:text-3xl">
+                  Featured Products
+                </h2>
+              </div>
               <ProductGrid
                 products={featuredProducts}
                 columns="collection"
@@ -184,7 +179,7 @@ async function HomepageContent() {
               <div className="mt-10 text-center">
                 <a
                   href="/shop"
-                  className="text-sm font-light text-[#1677FF] hover:text-[#0B3D91] underline"
+                  className="text-sm font-medium text-[#1677FF] hover:text-[#0B3D91] underline"
                 >
                   View all products
                 </a>
@@ -205,7 +200,7 @@ async function HomepageContent() {
               </p>
               <a
                 href="/shop"
-                className="text-sm font-light text-[#1677FF] hover:text-[#0B3D91] underline"
+                className="text-sm font-medium text-[#1677FF] hover:text-[#0B3D91] underline"
               >
                 View all products
               </a>
@@ -223,8 +218,7 @@ export default async function HomePage() {
       <Hero />
       <HomepageContent />
       <ServicesSection />
-      <BrandStatement />
-      <NewsletterSubscribe />
+      <Footer />
     </>
   )
 }

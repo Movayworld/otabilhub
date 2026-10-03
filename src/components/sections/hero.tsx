@@ -5,8 +5,8 @@ import { Container } from '@/components/layout/container'
 import { Button } from '@/components/ui/button'
 
 const FALLBACK_IMAGE =
-  'https://images.pexels.com/photos/6576991/pexels-photo-6576991.jpeg?auto=compress&cs=tinysrgb&w=1200&fit=max'
-const FALLBACK_IMAGE_ALT = 'Premium electrical appliances and installation'
+  'https://images.unsplash.com/photo-1545198580-9e93e2e64f1d?auto=compress&cs=tinysrgb&w=1200&fit=max'
+const FALLBACK_IMAGE_ALT = 'Professional electrical equipment and installation materials'
 
 type HeroContent = {
   image_url: string
@@ -22,11 +22,11 @@ type HeroContent = {
 const FALLBACK_HERO: HeroContent = {
   image_url: FALLBACK_IMAGE,
   image_alt: FALLBACK_IMAGE_ALT,
-  heading: 'Premium Electrical Solutions',
-  subheading: 'Quality electrical appliances, lighting, and smart technology for modern homes and businesses.',
-  primary_cta_text: 'Shop Electrical Products',
+  heading: 'Electrical Supplies & Technology',
+  subheading: 'Everything you need for electrical, electronics, and installation work.',
+  primary_cta_text: 'Shop Products',
   primary_cta_url: '/shop',
-  secondary_cta_text: 'Installation Services',
+  secondary_cta_text: 'Our Services',
   secondary_cta_url: '/services',
 }
 
@@ -50,15 +50,15 @@ export async function Hero() {
   const showSecondaryCta = Boolean(hero.secondary_cta_text && hero.secondary_cta_url)
 
   return (
-    <section className="relative pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16">
+    <section className="bg-[#F5F7FA] py-12 sm:py-16 lg:py-20">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-center lg:text-left">
-            <p className="text-sm font-light tracking-widener text-[#1677FF] uppercase mb-4">
+        <div className="grid grid-cols-1 gap-12 items-center lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="text-sm font-semibold tracking-wider text-[#1677FF] uppercase mb-6">
               OtabilHub Electrical
             </p>
             <h1
-              className="font-display mt-4 text-4xl font-light tracking-tight text-[#0B1F33] sm:text-5xl lg:text-6xl"
+              className="text-3xl font-bold tracking-tight text-[#0B1F33] sm:text-4xl lg:text-5xl"
               data-testid="hero-heading"
             >
               {headingLines.map((line) => (
@@ -67,14 +67,15 @@ export async function Hero() {
                 </span>
               ))}
             </h1>
-            <p className="mt-6 text-lg text-gray-600 max-w-xl mx-auto lg:mx-0" data-testid="hero-subheading">
-              {hero.subheading ||
-                'Quality electrical appliances, lighting, and smart technology for modern homes and businesses.'}
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            {hero.subheading && (
+              <p className="mt-4 text-lg text-gray-600" data-testid="hero-subheading">
+                {hero.subheading}
+              </p>
+            )}
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link href={hero.primary_cta_url || '/shop'}>
                 <Button variant="primary" size="lg" data-testid="hero-primary-cta">
-                  {hero.primary_cta_text || 'Shop Electrical Products'}
+                  {hero.primary_cta_text || 'Shop Products'}
                 </Button>
               </Link>
               {showSecondaryCta && (
@@ -87,12 +88,12 @@ export async function Hero() {
             </div>
           </div>
 
-          <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-100 shadow-lg">
+          <div className="relative aspect-video w-full max-w-lg rounded-lg overflow-hidden bg-gray-100 shadow-sm">
             <Image
               src={hero.image_url}
               alt={hero.image_alt || hero.heading}
               fill
-              sizes="(max-width: 1024px) 100vw, 600px"
+              sizes="(max-width: 1024px) 100vw, 500px"
               className="object-cover"
               data-testid="hero-image"
               priority

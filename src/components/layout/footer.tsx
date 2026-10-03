@@ -3,14 +3,29 @@
 import Link from 'next/link'
 import { Container } from '@/components/layout/container'
 
-const footerLinks = [
-  { name: 'Shop', href: '/shop' },
-  { name: 'Services', href: '/services' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'Privacy', href: '/privacy' },
+const productCategories = [
+  { name: 'Circuit Breakers', href: '/shop?category=circuit-breakers' },
+  { name: 'Electrical Panels', href: '/shop?category=electrical-panels' },
+  { name: 'Wiring & Cables', href: '/shop?category=wiring-cables' },
+  { name: 'Switches & Outlets', href: '/shop?category=switches-outlets' },
+  { name: 'Lighting', href: '/shop?category=lighting' },
+  { name: 'Tools', href: '/shop?category=tools' },
+  { name: 'Fans & Ventilation', href: '/shop?category=fans' },
+]
+
+const customerService = [
+  { name: 'Contact Us', href: '/contact' },
+  { name: 'Shipping Policy', href: '/shipping' },
+  { name: 'Returns & Warranty', href: '/returns' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Installation Services', href: '/services' },
+  { name: 'Track Order', href: '/account/orders' },
+]
+
+const legalLinks = [
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' },
   { name: 'Cookie Policy', href: '/cookie-policy' },
-  { name: 'Terms', href: '/terms' },
 ]
 
 export function Footer() {
@@ -22,12 +37,72 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t border-gray-300/50 bg-[#F5F7FA] py-8">
+    <footer className="border-t border-gray-300/50 bg-[#F5F7FA] pt-14">
       <Container>
-        <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 className="text-sm font-semibold text-[#0B1F33]">Product Categories</h3>
+            <ul className="mt-4 space-y-2.5 text-sm text-gray-600">
+              {productCategories.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 transition-colors hover:text-[#1677FF]"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-[#0B1F33]">Customer Service</h3>
+            <ul className="mt-4 space-y-2.5 text-sm text-gray-600">
+              {customerService.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 transition-colors hover:text-[#1677FF]"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-[#0B1F33]">Contact</h3>
+            <ul className="mt-4 space-y-2.5 text-sm text-gray-600">
+              <li>info@otabilhub.com</li>
+              <li>+233 30 123 4567</li>
+              <li>Accra, Ghana</li>
+              <li>Mon-Fri: 8am - 5pm</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold text-[#0B1F33]">Legal</h3>
+            <ul className="mt-4 space-y-2.5 text-sm text-gray-600">
+              {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 transition-colors hover:text-[#1677FF]"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-gray-300/30 pt-6">
           <div
             id="admin-trigger"
-            className="cursor-pointer select-none"
+            className="cursor-pointer select-none text-center"
             role="button"
             tabIndex={0}
             onClick={dispatchAdminClick}
@@ -42,24 +117,7 @@ export function Footer() {
               &copy; {year} OtabilHub.
             </p>
           </div>
-          <ul className="flex flex-wrap justify-center gap-4 text-xs text-gray-500">
-            {footerLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className="text-gray-500 transition-colors hover:text-[#1677FF]"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Container>
-
-      <div className="mt-4 border-t border-gray-300/30 pt-4">
-        <Container>
-          <p className="text-center text-xs text-gray-500">
+          <p className="mt-1 text-center text-xs text-gray-500">
             Created by{' '}
             <a
               href="https://moval.world"
@@ -70,8 +128,8 @@ export function Footer() {
               moval.world
             </a>
           </p>
-        </Container>
-       </div>
+        </div>
+      </Container>
     </footer>
   )
 }

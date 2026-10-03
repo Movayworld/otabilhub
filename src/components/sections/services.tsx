@@ -7,7 +7,7 @@ export function ServicesSection() {
     <section className="py-16 sm:py-20 lg:py-24">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-light tracking-tight text-[#0B1F33] sm:text-4xl">
+           <h2 className="font-sans text-2xl font-semibold text-[#0B1F33] sm:text-3xl">
             Professional Installation
           </h2>
           <p className="mt-4 text-lg text-gray-600">

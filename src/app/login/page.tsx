@@ -81,7 +81,7 @@ export default function LoginPage() {
               Don't have an account?{' '}
               <Link
                 href="/signup"
-                className="font-medium text-green-600 hover:text-green-700"
+                className="font-medium text-[#1677FF] hover:text-[#0B3D91]"
               >
                 Create an account
               </Link>
@@ -101,7 +101,7 @@ export default function LoginPage() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="email"
                 aria-invalid={!!formErrors.email}
                 aria-describedby={formErrors.email ? 'email-error' : undefined}
@@ -123,7 +123,7 @@ export default function LoginPage() {
                 </label>
                 <Link
                   href="/forgot-password"
-                  className="text-sm text-gray-600 hover:text-green-600"
+                  className="text-sm text-gray-600 hover:text-[#1677FF]"
                 >
                   Forgot password?
                 </Link>
@@ -133,7 +133,7 @@ export default function LoginPage() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                 autoComplete="current-password"
                 aria-invalid={!!formErrors.password}
                 aria-describedby={formErrors.password ? 'password-error' : undefined}
@@ -176,3 +176,4 @@ export default function LoginPage() {
     </Section>
   )
 }
+

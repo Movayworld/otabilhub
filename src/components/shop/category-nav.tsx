@@ -19,7 +19,7 @@ export function CategoryNav({
   className,
 }: CategoryNavProps) {
   const isActive = (slug: string) =>
-    activeSlug === slug ? 'text-green-600' : ''
+    activeSlug === slug ? 'text-[#1677FF] font-medium' : ''
 
   return (
     <nav
@@ -39,8 +39,8 @@ export function CategoryNav({
           <Link
             href="/shop"
             className={cn(
-              'text-gray-700 transition-colors hover:text-green-600',
-              isActive('')
+              'text-gray-700 transition-colors hover:text-[#1677FF]',
+               isActive('')
             )}
           >
             All Products
@@ -51,7 +51,7 @@ export function CategoryNav({
             <Link
               href={`/shop?category=${category.slug}`}
               className={cn(
-                'text-gray-700 transition-colors hover:text-green-600',
+                'text-gray-700 transition-colors hover:text-[#1677FF]',
                 isActive(category.slug)
               )}
             >

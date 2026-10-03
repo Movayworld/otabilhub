@@ -46,7 +46,7 @@ export default function ContactPage() {
       <Section className="py-16 sm:py-20 lg:py-24">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-display text-3xl font-light tracking-tight text-[#0B1F33] sm:text-4xl lg:text-5xl">
+            <h1 className="font-sans text-3xl font-semibold tracking-tight text-[#0B1F33] sm:text-4xl lg:text-5xl">
               Contact Us
             </h1>
             <p className="mt-6 text-lg text-gray-600">
@@ -127,14 +127,14 @@ export default function ContactPage() {
               </h2>
 
               {submitted ? (
-                <div className="rounded-md bg-green-50 border border-green-200 p-6">
+                <div className="rounded-md bg-[#E6F0FF] border border-[#BBDEFB] p-6">
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 size={20} className="text-green-600" />
+                    <CheckCircle2 size={20} className="text-[#1677FF]" />
                     <h3 className="text-lg font-semibold text-green-900">
                       Message sent
                     </h3>
                   </div>
-                  <p className="mt-2 text-sm text-green-800">
+                  <p className="mt-2 text-sm text-[#0B3D91]">
                     Thank you for contacting us. We will get back to you shortly.
                   </p>
                 </div>
@@ -155,7 +155,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                     />
                   </div>
 
@@ -174,7 +174,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                     />
                   </div>
 
@@ -192,7 +192,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
                       }
-                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                     />
                   </div>
 
@@ -211,7 +211,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, subject: e.target.value })
                       }
-                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600"
+                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF]"
                     />
                   </div>
 
@@ -230,7 +230,7 @@ export default function ContactPage() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-green-600 resize-y"
+                      className="mt-1 block w-full text-sm text-gray-900 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-[#1677FF] focus:border-[#1677FF] resize-y"
                     />
                   </div>
 
@@ -268,3 +268,4 @@ export default function ContactPage() {
     </>
   )
 }
+
