@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: '';
+    --color-navy: #0B1F33;
+    --color-blue: #1677FF;
+    --color-blue-dark: #0B3D91;
+    --color-blue-light: #69C0FF;
+    --color-gray-light: #F5F7FA;
+    --color-gray: #9CA3AF;
+    --color-gray-dark: #6B7280;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-[#F5F7FA] text-[#0B1F33] antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-tight text-[#0B1F33];
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  p {
+    @apply text-gray-600 leading-relaxed;
+  }
+
+  a {
+    @apply text-inherit underline-offset-2 hover:text-[#1677FF];
+  }
+}
+
+@layer base {
+  html,
+  body {
+    width: 100%;
+    overflow-x: clip;
+  }
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
